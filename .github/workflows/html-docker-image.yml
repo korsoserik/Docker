@@ -17,4 +17,5 @@ jobs:
     - name: Build the Docker image
       run: |
         docker build . --file Dockerfile --tag cr.jedlik.cloud/html-korsoserik:0.1
+        docker login ghcr.io -u korsoserik -p ${{secrets.GHCR_TOKEN}}
         docker push cr.jedlik.cloud/html-korsoserik:0.1
